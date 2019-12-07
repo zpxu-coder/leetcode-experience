@@ -25,7 +25,16 @@
 #include "util.h"
 
 int rangeSumBST(struct TreeNode* root, int L, int R){
-
+    int sum = 0;
+    if (root) {
+        if (root->val >= L && root->val <= R) 
+          sum += root->val;
+        if (root->val > L)
+          sum += rangeSumBST(root->left, L, R);
+        if (root->val < R)
+          sum += rangeSumBST(root->right, L, R);
+    }
+    return sum;
 }
 
 int main()
