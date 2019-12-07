@@ -13,4 +13,4 @@
              595. 大的国家 (big-countries)
              1021. 删除最外层的括号 (remove-outermost-parenthese)
 
-2019/12/4    938. 二叉搜索树的范围和 (range-sum-of-bst)
+2019/12/7    938. 二叉搜索树的范围和 (range-sum-of-bst)
