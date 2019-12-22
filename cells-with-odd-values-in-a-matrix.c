@@ -41,7 +41,28 @@
  * */
 #include <stdio.h>
 int oddCells(int n, int m, int** indices, int indicesSize, int* indicesColSize){
-
+    int **matrix;
+    int i = 0, j = 0, oddnum = 0;
+    matrix = (int**)malloc(sizeof(int*) * n);
+    for (i = 0; i < n; i++) {
+        matrix[i] = (int*)malloc(sizeof(int) * m); 
+    }
+    memset(matrix, 0, m * n * sizeof(int));
+    for (i = 0; i < indicesSize; i++) {
+        for (j = 0; j < m; j++) {
+            if (++matrix[indices[i][indices[0]]][j] % 2)
+              oddnum++;
+            else
+              oddnum--;
+        }
+        for (j = 0; j < n; j++) {
+            if (++matrix[indices[i][indices[1]]][j] % 2)
+              oddnum++;
+            else
+              oddnum--;
+        }
+    }
+    return oddnum;
 }
 int main()
 {
